@@ -6,6 +6,13 @@ from re import sub
 genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
 model = genai.GenerativeModel('gemini-pro-vision')
 
+st.set_page_config(
+    page_title="Palm Reader",
+    page_icon="🔮",
+    layout="centered",
+    initial_sidebar_state="expanded",
+)
+
 st.header("Palm Reader 🔮")
 st.subheader("A funny initiative to bring palm reading to the 21st century. Ideated by @anushreekhadye, developed by @piyushchugeja, & powered by Google's Gemini AI.")
 
@@ -14,7 +21,6 @@ submit = st.button("Submit")
 
 if 'palm_image' not in st.session_state:
     st.session_state.palm_image = None
-
 
 with st.sidebar:
     st.subheader("Upload image")
