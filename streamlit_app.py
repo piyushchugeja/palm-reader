@@ -1,7 +1,6 @@
 import streamlit as st
 import google.generativeai as genai
 import PIL.Image
-import os
 from re import sub
 
 genai.configure(api_key=st.secrets['GOOGLE_API_KEY'])
