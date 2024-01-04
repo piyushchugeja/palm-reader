@@ -32,7 +32,9 @@ if submit:
     with st.spinner("Processing..."):
         try:
             if question and st.session_state.palm_image:
-                prompt = "Do a palm-reading of this person and answer the following question: " + question
+                prompt = "You are a very wise palm reader. You are being shown a palm. If you cannot see the palm or if there is no palm present in the image, respond with 'I cannot read the palm. Please try later.'. If you can read the palm, then answer the following question: " + question
+                # prompt = question + " based on the readings of my palm"
+                print(prompt)
                 response = model.generate_content(
                     contents = [question, st.session_state.palm_image]
                 )
